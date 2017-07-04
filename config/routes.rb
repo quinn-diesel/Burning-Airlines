@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'create/destroy'
+
+  root to: 'login_static#show'
+
   get 'pages/app'
 
   resources :reservations
   resources :flights
   resources :airplanes
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
