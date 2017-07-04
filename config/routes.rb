@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'login_static#show'
 
-  get '/pages/app' => 'pages#app'
+  get 'pages/app' => 'pages#app'
 
   get '/login'  => 'session#new' # login form
   post '/login' => 'session#create' # check credentials and attempt login (set session)
