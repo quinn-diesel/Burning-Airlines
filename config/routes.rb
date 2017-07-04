@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'create/destroy'
-
   root to: 'login_static#show'
 
-  get 'pages/app'
+    get '/pages/app' => 'pages#app'
+
+  get '/login'  => 'session#new' # login form
+  post '/login' => 'session#create' # check credentials and attempt login (set session)
+  delete '/login' => 'session#destroy' # log out destroy the session
 
   resources :reservations
   resources :flights

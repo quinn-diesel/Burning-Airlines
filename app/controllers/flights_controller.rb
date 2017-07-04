@@ -14,11 +14,13 @@ class FlightsController < ApplicationController
 
   # GET /flights/new
   def new
+    @airplanes = Airplane.all
     @flight = Flight.new
   end
 
   # GET /flights/1/edit
   def edit
+    @airplanes = Airplane.all
   end
 
   # POST /flights
@@ -69,6 +71,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.require(:flight).permit(:date, :to, :from, :plane_id)
+      params.require(:flight).permit(:date, :to, :from, :airplane_id)
     end
 end
