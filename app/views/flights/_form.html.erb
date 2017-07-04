@@ -17,18 +17,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :to %>
-    <%= f.text_field :to %>
-  </div>
-
-  <div class="field">
     <%= f.label :from %>
     <%= f.text_field :from %>
   </div>
 
   <div class="field">
-    <%= f.label :plane_id %>
-    <%= f.number_field :plane_id %>
+    <%= f.label :to %>
+    <%= f.text_field :to %>
+  </div>
+
+  <div class="field">
+    <%= f.label :airplane_id %>
+    <%= f.collection_select :airplane_id, @airplanes, :id, :name, include_blank: false%>
   </div>
 
   <div class="actions">

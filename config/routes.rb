@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  get 'pages/app'
+
+  root 'session#new'
+
+  get '/login'  => 'session#new' # login form
+  post '/login' => 'session#create' # check credentials and attempt login (set session)
+  delete '/login' => 'session#destroy' # log out destroy the session
+
+
+  get '/pages/app' => 'pages#app'
 
   resources :reservations
   resources :flights
