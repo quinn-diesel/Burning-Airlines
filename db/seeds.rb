@@ -21,12 +21,32 @@ r1 = Reservation.create
 Flight.destroy_all
 f1 = Flight.create date:"2017-12-12", from:"Los Angeles", to:"Sydney"
 f2 = Flight.create date:"2017-11-11", from:"London", to:"Jakarta"
-f3 = Flight.create date:"2017-07-19", from:"Los Angeles", to:"Sydney"
+f3 = Flight.create date:"2017-09-19", from:"Los Angeles", to:"Sydney"
+f4 = Flight.create date:"2017-09-19", from:"Madrid", to:"Paris"
+f5 = Flight.create date:"2017-09-19", from:"Paris", to:"New York"
+f6 = Flight.create date:"2017-09-19", from:"Bangkok", to:"New York"
+f7 = Flight.create date:"2017-09-19", from:"New York", to:"Sydney"
+f8 = Flight.create date:"2017-09-19", from:"New Dehli", to:"Honolulu"
+f9 = Flight.create date:"2017-09-19", from:"Honolulu", to:"New York"
+f10 = Flight.create date:"2017-09-19", from:"Tokyo", to:"Toronto"
+f11 = Flight.create date:"2017-09-19", from:"Toronto", to:"Bangkok"
+f12 = Flight.create date:"2017-09-19", from:"Dubai", to:"Honolulu"
+f13 = Flight.create date:"2017-09-19", from:"Nanjing", to:"Sydney"
+f14 = Flight.create date:"2017-09-19", from:"Singapore", to:"Madrid"
+f15 = Flight.create date:"2017-09-19", from:"Phuket", to:"Bali"
 
 Airplane.destroy_all
 p1 = Airplane.create name:'797', rows:"20", columns:"4"
 p2 = Airplane.create name:'A999', rows:"24", columns:"6"
-p3 = Airplane.create name:'C678', rows:'30', columns:'12'
+p3 = Airplane.create name:'747', rows:'30', columns:'4'
+p4 = Airplane.create name:'888', rows:'18', columns:'5'
+p5 = Airplane.create name:'676', rows:'24', columns:'4'
+p6 = Airplane.create name:'454', rows:'26', columns:'6'
+p7 = Airplane.create name:'333', rows:'28', columns:'4'
+p8 = Airplane.create name:'A18', rows:'17', columns:'5'
+p9 = Airplane.create name:'987', rows:'32', columns:'5'
+p10 = Airplane.create name:'A346', rows:'40', columns:'6'
+
 
 u1.reservations << r1
 
