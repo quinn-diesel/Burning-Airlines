@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/app'
+
   resources :reservations
   resources :flights
   resources :airplanes
