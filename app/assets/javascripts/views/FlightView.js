@@ -4,18 +4,7 @@ app.FlightView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  // events: {
-  //   "click tr": "gotoFlightDetail"
-  // },
-  //
-  // gotoFlightDetail: function(event){
-  //   var flight_id = this.model.get('id');
-  //   console.log(event);
-  //   console.log(flight_id);
-  //   // console.log(flight_id);
-  //   app.router.navigate( "app/" + flight_id, true );
-  //   // console.log(event);
-  // },
+
 
   render: function(){
 
@@ -36,6 +25,19 @@ app.FlightView = Backbone.View.extend({
 
 app.SearchView = Backbone.View.extend({
   tagName: 'tr',
+  events: {
+    "click": "gotoFlightDetail"
+  },
+
+  gotoFlightDetail: function(event){
+    console.log(event);
+
+    var flight_id = this.model.get('id');
+    console.log(flight_id);
+    // console.log(flight_id);
+    app.router.navigate( "flights/" + flight_id, true );
+    // console.log(event);
+  },
 
   render: function(){
 
