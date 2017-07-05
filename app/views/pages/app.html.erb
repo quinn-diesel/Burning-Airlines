@@ -2,6 +2,18 @@
   This is where the burning of the airlines should render and load the HTML.
 </div>
 
+<script type="html/javascript" id="AppViewTemplate">
+
+  <h1>Inferno Airlines</h1>
+
+  <div id="SearchView">
+  </div>
+  
+  <ul id="flights">
+  </ul>
+
+</script>
+
 <script type="html/template" id ="AirplaneViewTemplate">
   <div id="AirplaneView">
     <h1>Make a new plane here and enter details</h1>
@@ -9,6 +21,10 @@
     <p>Rows</p>
     <p>Cols</p>
   </div>
+</script>
+
+<script type="html/template" id="FlightViewTemplate">
+
 </script>
 
 <script type="html/template" id="ReservationViewTemplate">
@@ -21,9 +37,13 @@
 </script>
 
 <script type="html/template" id ="SearchViewTemplate">
-<div id="SearchView">
-  <h1>Search the flights for the
-    <p>To</p>
-    <p>From</p>
-</div>
+
+  <form class="SearchForm">
+    From:
+    <input id="from" type="text"/>
+    To:
+    <input id="to" type="text"/>
+    <button>Search</button>
+  </form>
+
 </script>
