@@ -12,6 +12,7 @@ class FlightsController < ApplicationController
   # GET /flights/1.json
   def show
       render :json => @flight, :include => :airplane
+
   end
 
   # GET /flights/new
