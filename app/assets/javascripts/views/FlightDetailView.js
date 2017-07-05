@@ -29,11 +29,9 @@ app.FlightDetailView = Backbone.View.extend({
     });
 
 
-
+    // this.$el.html(markup);
     this.$el.html(markup);
     this.$el.append($seatTable);
-
-    /// some changes
 
 
 
