@@ -9,8 +9,9 @@ app.FlightDetailView = Backbone.View.extend({
 
     var rawTemplate = $('#FlightDetailViewTemplate').html();
     var template = _.template(rawTemplate);
-    debugger;
-    var markup = template(this.model.atrributes);
+    var markup = template(this.model.attributes);
+
+
 
 
     var rows = _.range(1,21);
@@ -18,7 +19,7 @@ app.FlightDetailView = Backbone.View.extend({
 
     _.each(rows, function(num){
       var $row = $("<tr>")
-      $row.appendTo("#seatingPlan")
+      $row.appendTo("#seatPlanning");
       _.each(columns, function(n){
         var $column = $('<td>');
         $column.appendTo($row);
@@ -26,7 +27,10 @@ app.FlightDetailView = Backbone.View.extend({
     });
 
 
+    // this.$el.html(markup);
     this.$el.html(markup);
+
+
 
 
   }
