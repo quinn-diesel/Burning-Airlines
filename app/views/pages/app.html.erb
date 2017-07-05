@@ -2,35 +2,32 @@
   This is where the burning of the airlines should render and load the HTML.
 </div>
 
+
+<!-- MAIN PAGE SEARCH TEMPLATE  -->
 <script type="html/javascript" id="AppViewTemplate">
-
   <h1>Inferno Airlines</h1>
-
   <div id="SearchView">
   </div>
-
   <table id="flights">
     <tr>
       <th>Flight Number</th>
       <th>Date</th>
       <th>From</th>
-      <th><To></To></th>
+      <th>To</th>
     </tr>
   </table>
-
   <table id="searchFlights" style="display: none">
     <tr>
       <th>Flight Number</th>
       <th>Date</th>
       <th>From</th>
-      <th><To></To></th>
+      <th>To</th>
     </tr>
 </table>
-
   </table>
-
 </script>
 
+<!-- ADMIN CREATE AIRPLANE  -->
 <script type="html/template" id ="AirplaneViewTemplate">
   <div id="AirplaneView">
     <h1>Make a new plane here and enter details</h1>
@@ -40,6 +37,7 @@
   </div>
 </script>
 
+<!-- TABLE FOR THE FLIGHT DETAILS  -->
 <script type="html/template" id="FlightViewTemplate">
   <td>{{ id }}</td>
   <td>{{ date }}</td>
@@ -47,6 +45,7 @@
   <td>{{ to }}</td>
 </script>
 
+<!-- RESERVATION DETAILS -->
 <script type="html/template" id="ReservationViewTemplate">
   <div id="FlightView">
     <h1>Enter in the reservation details</h1>
@@ -56,8 +55,8 @@
   </div>
 </script>
 
+<!-- SEARCH TEMPLATE -->
 <script type="html/template" id ="SearchViewTemplate">
-
   <div class="SearchForm">
     From:
     <input id="from" type="text"/>
@@ -65,5 +64,17 @@
     <input id="to" type="text"/>
     <button>Search</button>
   </div>
+</script>
 
+
+<!-- FLIGHT DETAILS TEMPLACE  -->
+<script type="html/template" id="FlightDetailViewTemplate">
+  <h1>Flight number: {{ id }}</h1>
+  <h2>{{ date }}</h2>
+  <h2>{{ from }}</h2>
+  <h2>{{ to }}</h2>
+  <h3>Capacity</h3>
+  <h3>Seats left</h3>
+  <div>
+  </div>
 </script>
