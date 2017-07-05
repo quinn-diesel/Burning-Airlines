@@ -15,7 +15,7 @@ app.AppRouter = Backbone.Router.extend({
 
   }
 
-  showFlight: function(flignt_id){
+  showFlight: function(flight_id){
     console.log("Navigated to flight detail route", flight_id);
   }
 
