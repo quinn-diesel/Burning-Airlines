@@ -8,9 +8,15 @@
 
   <div id="SearchView">
   </div>
-  
-  <ul id="flights">
-  </ul>
+
+  <table id="flights">
+    <tr>
+      <th>Flight Number</th>
+      <th>Date</th>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+  </table>
 
 </script>
 
@@ -24,7 +30,10 @@
 </script>
 
 <script type="html/template" id="FlightViewTemplate">
-
+  <td>{{ id }}</td>
+  <td>{{ date }}</td>
+  <td>{{ from }}</td>
+  <td>{{ to }}</td>
 </script>
 
 <script type="html/template" id="ReservationViewTemplate">
