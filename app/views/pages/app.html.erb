@@ -14,8 +14,19 @@
       <th>Flight Number</th>
       <th>Date</th>
       <th>From</th>
-      <th>To</th>
+      <th><To></To></th>
     </tr>
+  </table>
+
+  <table id="searchFlights">
+    <tr>
+      <th>Flight Number</th>
+      <th>Date</th>
+      <th>From</th>
+      <th><To></To></th>
+    </tr>
+</table>
+
   </table>
 
 </script>
@@ -47,12 +58,12 @@
 
 <script type="html/template" id ="SearchViewTemplate">
 
-  <div class="SearchForm">
+  <form class="SearchForm">
     From:
     <input id="from" type="text"/>
     To:
     <input id="to" type="text"/>
     <button>Search</button>
-  </div>
+  </form>
 
 </script>
