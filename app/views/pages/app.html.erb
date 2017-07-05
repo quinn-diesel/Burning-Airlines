@@ -15,7 +15,7 @@
       <th>Flight Number</th>
       <th>Date</th>
       <th>From</th>
-      <th>To</th>
+      <th><To></To></th>
     </tr>
   </table>
   <table id="searchFlights" style="display: none">
@@ -23,8 +23,9 @@
       <th>Flight Number</th>
       <th>Date</th>
       <th>From</th>
-      <th>To</th>
+      <th><To></To></th>
     </tr>
+<<<<<<< HEAD
 <<<<<<< HEAD
 </table>
 =======
@@ -33,9 +34,15 @@
 <<<<<<< HEAD
   <table id="seatPlanning">
 >>>>>>> cbb3a15a4dbe7cb076ef1125c236399b0ad06544
+=======
+</table>
+
+<<<<<<< HEAD
+>>>>>>> a61622609a5494cf7164c90ba1416aa5e64e10d5
   </table>
 =======
 
+>>>>>>> f9197f194bd32cce5403a7e82ab8d2a9931deb4f
 
 >>>>>>> f9197f194bd32cce5403a7e82ab8d2a9931deb4f
 </script>
@@ -96,14 +103,12 @@
 <!-- FLIGHT DETAILS TEMPLACE  -->
 <script type="html/template" id="FlightDetailViewTemplate">
 
+  <h1>Flight number: {{ id }}</h1>
+  <h2>{{ date }}</h2>
   <h2>{{ from }}</h2>
   <h2>{{ to }}</h2>
-  <h2>{{ date }}</h2>
 
   <h3>Capacity</h3>
   <h3>Seats left</h3>
-
-  <table id="seatPlanning">
-  </table>
 
 </script>
