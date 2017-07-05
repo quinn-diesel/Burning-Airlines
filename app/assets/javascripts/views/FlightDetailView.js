@@ -31,6 +31,7 @@ app.FlightDetailView = Backbone.View.extend({
       });
     });
 
+
     $(document).on('click', ".seat", function(){
       console.log($(this).attr('row_no'), $(this).attr('column_no'));
       $(".seat").not(this).removeClass('selected');
