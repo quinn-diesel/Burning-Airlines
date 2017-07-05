@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'login_static/show'
+
   root to: 'login_static#show'
 
   get '/app' => 'pages#app'
