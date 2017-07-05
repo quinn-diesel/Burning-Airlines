@@ -13,7 +13,7 @@ app.FlightDetailView = Backbone.View.extend({
 
     var rowSize = this.model.attributes.airplane.rows;
     var columnSize = this.model.attributes.airplane.columns;
-
+    
 
     var rows = _.range(1,rowSize+1);
     var columns = _.range(1,columnSize+1);
