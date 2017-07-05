@@ -15,10 +15,14 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
+<<<<<<< HEAD
     respond_to do |format|
       format.html {}
       format.json { render :json => @flight, :include => :airplane }
     end
+=======
+      render :json => @flight, :include => :airplane
+>>>>>>> 53888b0c9ff0ea9f59f65a32b074acf886870c5a
 
   end
 
