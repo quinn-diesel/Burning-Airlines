@@ -1,3 +1,4 @@
-plane
+airplanes
 flight
 user
+reservation
