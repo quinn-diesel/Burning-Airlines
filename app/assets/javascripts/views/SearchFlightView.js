@@ -9,7 +9,15 @@ app.SearchFlightView = Backbone.View.extend({
   },
 
   searchFlights: function(){
-    
+    var $fromInput = $("#from").val();
+    console.log("Filter flights from: " + $fromInput);
+
+    var results = _.filter(app.flights.models, function(flight){
+      return flight.get('from') === $fromInput;
+    })
+
+    console.log("Filtered resutls: " , results);
+
 
   },
 
