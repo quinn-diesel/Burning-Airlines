@@ -14,7 +14,6 @@ app.FlightDetailView = Backbone.View.extend({
     var rowSize = this.model.attributes.airplane.rows;
     var columnSize = this.model.attributes.airplane.columns;
 
-
     var rows = _.range(1,rowSize+1);
     var columns = _.range(1,columnSize+1);
     var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -31,9 +30,10 @@ app.FlightDetailView = Backbone.View.extend({
       });
     });
 
+
     $(document).on('click', ".seat", function(){
       console.log($(this).attr('row_no'), $(this).attr('column_no'));
-      $(this).css("background-color", "green")
+      $(this).addClass('selected')
     })
 
 
