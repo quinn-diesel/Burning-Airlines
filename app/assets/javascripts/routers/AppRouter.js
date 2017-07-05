@@ -2,9 +2,9 @@ var app = app || {};
 
 app.AppRouter = Backbone.Router.extend({
   routes: {
-    'app': "initializeFlights",
     '': "initializeFlights",
-    'app/:flight_id': "showFlight",
+    'flights': "initializeFlights",
+    'flights/:flight_id': "showFlight",
   },
 
   initializeFlights: function(){
@@ -13,10 +13,17 @@ app.AppRouter = Backbone.Router.extend({
     var appView = new app.AppView();
     appView.render();
 
-  }
+  },
 
-  showFlight: function(flignt_id){
+  showFlight: function(flight_id){
     console.log("Navigated to flight detail route", flight_id);
+
+    var flight = app.flights.get(flight_id);
+
+    console.log('flight:', flight);
+
+    var flightView = new app.FlightDetailView({model:flight});
+    flightView.render();
   }
 
 

@@ -4,6 +4,19 @@ app.FlightView = Backbone.View.extend({
 
   tagName: 'tr',
 
+  // events: {
+  //   "click tr": "gotoFlightDetail"
+  // },
+  //
+  // gotoFlightDetail: function(event){
+  //   var flight_id = this.model.get('id');
+  //   console.log(event);
+  //   console.log(flight_id);
+  //   // console.log(flight_id);
+  //   app.router.navigate( "app/" + flight_id, true );
+  //   // console.log(event);
+  // },
+
   render: function(){
 
     // old function that is just getting ID
@@ -15,7 +28,7 @@ app.FlightView = Backbone.View.extend({
     var template = _.template( rawTemplate );
     var markup = template(this.model.attributes);
 
-    this.$el.html( markup ).appendTo('#flights');
+    this.$el.html( markup ).attr("flight_id", this.model.get('id')).appendTo('#flights');
   }
 
 });

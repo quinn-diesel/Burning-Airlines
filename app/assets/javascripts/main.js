@@ -20,9 +20,11 @@ $(document).ready(function(){
   //   Backbone.history.start();
   // });
 
-  Backbone.history.start();
 
-  app.flights.fetch();
+  app.flights.fetch().done(function(){
+    Backbone.history.start();
+    
+  });
 
 
 
