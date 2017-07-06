@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless @current_user.present?
   end
 
-  # add: check_if_admin later
+  def check_if_admin
+    redirect_to login_path unless @current_user.present? and @current_user.is_admin
+  end
 
 
 end

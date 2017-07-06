@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin, except: [:show, :index]
 
   # GET /flights
   # GET /flights.json

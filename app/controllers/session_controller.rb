@@ -7,7 +7,7 @@ class SessionController < ApplicationController
 
     if user.present? and user.authenticate params[:password] # login success
       session[:user_id] = user.id
-      redirect_to app_path
+      redirect_to '/app#reservations'
     else
       #login fail
       flash[:error] = "Incorrect Email and/or Password"

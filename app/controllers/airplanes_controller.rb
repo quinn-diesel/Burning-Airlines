@@ -1,6 +1,6 @@
 class AirplanesController < ApplicationController
   before_action :set_airplane, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_if_admin, except: [:index, :show]
   # GET /airplanes
   # GET /airplanes.json
   def index

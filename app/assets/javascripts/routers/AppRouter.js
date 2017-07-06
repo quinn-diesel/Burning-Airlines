@@ -17,9 +17,11 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   showFlight: function(flight_id){
+    var appView = new app.AppView();
+    appView.render();
     console.log("Navigated to flight detail route", flight_id);
     $('#SearchView').hide();
-    
+
     $('#searchFlights').hide();
 
 
@@ -32,6 +34,8 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   showReservation: function (){
+    var appView = new app.AppView();
+    appView.render();
     console.log("Navigated to the reservation page");
 
     var reservations = new app.Reservations();
