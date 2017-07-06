@@ -5,7 +5,7 @@ app.AppRouter = Backbone.Router.extend({
     '': "initializeFlights",
     'flights': "initializeFlights",
     'flights/:flight_id': "showFlight",
-    'reservations/:user_id': 'showReservation',
+    'reservations': 'showReservation',
   },
 
   initializeFlights: function(){
@@ -25,6 +25,10 @@ app.AppRouter = Backbone.Router.extend({
 
     var flightDetailView = new app.FlightDetailView({model:flight});
     flightDetailView.render();
+  },
+
+  showReservation: function (){
+    console.log("Navigated to the reservation page");
   }
 
 

@@ -53,6 +53,7 @@ app.FlightDetailView = Backbone.View.extend({
 
     $(document).on('click', '#saveSeat', function(){
       reservation.save(valueToSave);
+      app.router.navigate( "reservations", true );
       console.log('saved: ', reservation);
     });
 
