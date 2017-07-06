@@ -10,7 +10,11 @@
   <%= @user.email %>
 </p>
 
-
-
+<div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
+
+<div>
+  <%= link_to "See My Reservations", "/app#reservations" %>
+</div>
