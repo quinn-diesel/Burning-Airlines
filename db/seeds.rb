@@ -37,6 +37,7 @@ f12 = Flight.create date:"2017-09-28", from:"Dubai", to:"Honolulu"
 f13 = Flight.create date:"2017-09-29", from:"Nanjing", to:"Sydney"
 f14 = Flight.create date:"2017-09-30", from:"Singapore", to:"Madrid"
 f15 = Flight.create date:"2017-10-19", from:"Phuket", to:"Bali"
+f16 = Flight.create date:"2017-10-01", from:"Cuba", to:"Bali"
 
 Airplane.destroy_all
 p1 = Airplane.create name:'797', rows:"20", columns:"4"
@@ -55,6 +56,8 @@ u1.reservations << r1
 u2.reservations << r2
 u3.reservations << r3
 
+
+p9.flights << f16
 
 p1.flights << f1 << f2
 p2.flights << f3
