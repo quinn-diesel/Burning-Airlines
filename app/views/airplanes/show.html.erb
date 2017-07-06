@@ -15,5 +15,10 @@
   <%= @airplane.name %>
 </p>
 
+<button id='displaySeats'>See seating plan</button>
+
+<div id='seatingChart' data-rows='<%= @airplane.rows %>' data-columns='<%= @airplane.columns %>'>
+</div>
+
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
 <%= link_to 'Back', airplanes_path %>
