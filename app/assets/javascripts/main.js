@@ -56,6 +56,8 @@ $(document).ready(function(){
   });
 
 
-
+  window.setInterval(function(){
+    app.flights.fetch();
+  } , 3000)
 
 });

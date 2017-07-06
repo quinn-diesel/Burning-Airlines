@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_logged_in
 
   # GET /reservations
   # GET /reservations.json
@@ -7,7 +8,7 @@ class ReservationsController < ApplicationController
     if @current_user.present? and @current_user.is_admin
       @reservations = Reservation.all
     else
-      @reservations = Reservation.where   user_id:@current_user.id
+      @reservations = Reservation.where user_id:@current_user.id
     end
     # @reservations = Reservation.all
     respond_to do |format|

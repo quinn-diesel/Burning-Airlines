@@ -30,6 +30,8 @@ app.SearchView = Backbone.View.extend({
   },
 
   gotoFlightDetail: function(event){
+
+    
     console.log(event);
 
     var flight_id = this.model.get('id');
