@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704233013) do
+ActiveRecord::Schema.define(version: 20170706000418) do
 
   create_table "airplanes", force: :cascade do |t|
     t.integer  "rows"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170704233013) do
     t.integer  "flight_id"
     t.string   "row_no"
     t.string   "column_no"
+    t.string   "seat_no"
   end
 
   create_table "users", force: :cascade do |t|

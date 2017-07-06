@@ -5,6 +5,8 @@ app.FlightDetailView = Backbone.View.extend({
 
   el: '#app',
 
+  currentSeat: null,
+
   render: function(){
 
     var rawTemplate = $('#FlightDetailViewTemplate').html();
@@ -31,20 +33,33 @@ app.FlightDetailView = Backbone.View.extend({
       });
     });
 
+    var reservation = new app.Reservation();
+
+    var valueToSave = {
+      flight_id: this.model.get('id'),
+      seat_no: ''
+    };
 
     $(document).on('click', ".seat", function(){
-      console.log($(this).attr('row_no'), $(this).attr('column_no'));
+
       $(".seat").not(this).removeClass('selected');
       $(this).toggleClass('selected');
-    })
+      valueToSave.seat_no = $(this).attr('row_no') + $(this).attr('column_no');
+      console.log("Current Seat: " + valueToSave.seat_no);
+
+    });
+
+    // click to saveSeat
+
+    $(document).on('click', '#saveSeat', function(){
+      reservation.save(valueToSave);
+      console.log('saved: ', reservation);
+    });
 
 
     // this.$el.html(markup);
     this.$el.html(markup);
     this.$el.append($seatTable);
-
-
-
 
 
   }
