@@ -31,12 +31,21 @@ app.AppRouter = Backbone.Router.extend({
     console.log("Navigated to the reservation page");
 
     var reservations = new app.Reservations();
-    reservations.fetch();
 
-    var rv = new app.ShowReservationView(
-      {collection:reservations}
-    );
-    rv.render();
+    reservations.fetch().done(function(){
+      $('#reservations').show();
+      
+      _.each(reservations.models, function( res ){
+
+        var rv = new app.ShowReservationView(
+          {model:res}
+        );
+        rv.render();
+      });
+
+    });
+
+
 
   }
 

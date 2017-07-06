@@ -46,18 +46,9 @@
     </tr>
   </table>
 
-
 </script>
 
-<!-- ADMIN CREATE AIRPLANE  -->
-<script type="html/template" id ="AirplaneViewTemplate">
-  <div id="AirplaneView">
-    <h1>Make a new plane here and enter details</h1>
-    <p>Name</p>
-    <p>Rows</p>
-    <p>Cols</p>
-  </div>
-</script>
+
 
 <!-- TABLE FOR THE FLIGHT DETAILS  -->
 <script type="html/template" id="FlightViewTemplate">
@@ -67,15 +58,7 @@
   <td>{{ to }}</td>
 </script>
 
-<!-- RESERVATION DETAILS -->
-<script type="html/template" id="ReservationViewTemplate">
-  <div id="FlightView">
-    <h1>Enter in the reservation details</h1>
-      <p>Flight Number</p>
-      <p>Seats free</p>
-      <p>Select seat number</p>
-  </div>
-</script>
+
 
 <!-- SEARCH TEMPLATE -->
 <script type="html/template" id ="SearchViewTemplate">
@@ -106,10 +89,10 @@
 
 <script type="html/template" id="ShowReservationTemplate">
 
-    <td>{{ id }}</td>
-    <td>{{ date }}</td>
-    <td>{{ from }}</td>
-    <td>{{ to }}</td>
+    <td>{{ flight_id }}</td>
+    <td>{{ flight.date }}</td>
+    <td>{{ flight.from }}</td>
+    <td>{{ flight.to }}</td>
     <td>{{ seat_no }}</td>
 
 </script>

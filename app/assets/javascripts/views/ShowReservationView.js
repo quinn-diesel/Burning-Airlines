@@ -5,17 +5,15 @@ app.ShowReservationView = Backbone.View.extend({
 
   render: function (){
 
-    console.log(this.collection);
+    //
 
-    _.each(this.collection.models, function( res ){
       var rawTemplate = $('#ShowReservationTemplate').html();
       var template = _.template( rawTemplate );
-      var markup = template(res.attributes);
+      var markup = template(this.model.attributes);
+      
       this.$el.html( markup ).appendTo('#reservations');
-      console.log(res);
-    });
 
-    $('#reservations').show();
+
 
   }
 
