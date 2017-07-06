@@ -1,5 +1,18 @@
 <div id = "app">
-  This is where the burning of the airlines should render and load the HTML.
+  <!-- This is where the burning of the airlines should render and load the HTML. -->
+
+  <!-- hidden table -->
+  <table id="reservations" style="display: none">
+    <tr>
+      <th>Flight Number</th>
+      <th>Date</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Your Seat Reservation</th>
+    </tr>
+
+  </table>
+
 </div>
 
 
@@ -23,6 +36,7 @@
       <th>To</th>
     </tr>
   </table>
+
   <table id="searchFlights" style="display: none">
     <tr>
       <th>Flight Number</th>
@@ -92,21 +106,10 @@
 
 <script type="html/template" id="ShowReservationTemplate">
 
-<table>
-  <tr>
-    <th>Flight Number</th>
-    <th>Date</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Your Seat Reservation</th>
-  </tr>
-  <tr>
     <td>{{ id }}</td>
     <td>{{ date }}</td>
     <td>{{ from }}</td>
     <td>{{ to }}</td>
     <td>{{ seat_no }}</td>
-  </tr>
-</table>
 
 </script>
