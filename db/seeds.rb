@@ -15,7 +15,10 @@ u3 = User.create name:"bravetraveller", email:"brave@email.com",
 password:'chicken'
 
 Reservation.destroy_all
-r1 = Reservation.create
+r1 = Reservation.create seat_no:"2B"
+r2 = Reservation.create seat_no:"3A"
+r3 = Reservation.create seat_no:"4D"
+
 
 
 Flight.destroy_all
@@ -49,12 +52,14 @@ p10 = Airplane.create name:'A346', rows:'40', columns:'6'
 
 
 u1.reservations << r1
+u2.reservations << r2
+u3.reservations << r3
 
 
 p1.flights << f1 << f2
 p2.flights << f3
 
-f1.reservations << r1
+f1.reservations << r1 << r2 << r3
 
 
 puts "Seeds planted...."
