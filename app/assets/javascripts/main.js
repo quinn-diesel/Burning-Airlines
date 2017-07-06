@@ -34,6 +34,7 @@ $(document).on('click', '#displaySeats', function (){
       $column.appendTo($row);
     });
   });
+  $('#seatingChart').empty();
   $('#seatingChart').append($seatTable);
 
 });
