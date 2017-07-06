@@ -27,7 +27,7 @@ app.FlightDetailView = Backbone.View.extend({
       $row.appendTo($seatTable);
 
       _.each(columns, function(n){
-        var $column = $('<td class="seat">').attr('row_no', num).attr('column_no', letters[n-1]);
+        var $column = $('<td class="seat">').attr('row_no', num).attr('column_no', letters[n-1]).text(num + letters[n-1]);
         $column.appendTo($row);
       });
     });
@@ -53,7 +53,7 @@ app.FlightDetailView = Backbone.View.extend({
     $(document).on('click', '#saveSeat', function(){
       reservation.save(valueToSave);
       app.router.navigate( "reservations", true );
-      
+
       console.log('saved: ', reservation);
     });
 
