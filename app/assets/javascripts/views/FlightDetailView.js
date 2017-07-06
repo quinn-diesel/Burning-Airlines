@@ -12,6 +12,9 @@ app.FlightDetailView = Backbone.View.extend({
     var template = _.template(rawTemplate);
     var markup = template(this.model.attributes);
 
+    var reserved = this.model.attributes.reservations;
+    var reservedCheck = _.pluck(reserved, 'seat_no');
+
     var rowSize = this.model.attributes.airplane.rows;
     var columnSize = this.model.attributes.airplane.columns;
 
@@ -27,8 +30,14 @@ app.FlightDetailView = Backbone.View.extend({
       $row.appendTo($seatTable);
 
       _.each(columns, function(n){
-        var $column = $('<td class="seat">').attr('row_no', num).attr('column_no', letters[n-1]).text(num + letters[n-1]);
+        var seat_no = num + letters[n-1]
+        var $column = $('<td class="seat">').attr('seat_no', seat_no).text(seat_no);
         $column.appendTo($row);
+
+        if ( _.contains(reservedCheck, seat_no) ){
+          $column.addClass('reserved');
+        }
+
       });
     });
 
@@ -40,17 +49,24 @@ app.FlightDetailView = Backbone.View.extend({
     };
 
     $(document).on('click', ".seat", function(){
-
+      if ( $(this).hasClass('reserved') ) {
+        return;
+      }
       $(".seat").not(this).removeClass('selected');
       $(this).toggleClass('selected');
-      valueToSave.seat_no = $(this).attr('row_no') + $(this).attr('column_no');
+      valueToSave.seat_no = $(this).attr('seat_no');
       console.log("Current Seat: " + valueToSave.seat_no);
 
     });
 
     // click to saveSeat
 
+
+
     $(document).on('click', '#saveSeat', function(){
+
+
+
       reservation.save(valueToSave);
       app.router.navigate( "reservations", true );
 
