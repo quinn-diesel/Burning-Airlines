@@ -5,6 +5,7 @@ app.AppRouter = Backbone.Router.extend({
     '': "initializeFlights",
     'flights': "initializeFlights",
     'flights/:flight_id': "showFlight",
+    'reservations/:user_id': 'showReservation',
   },
 
   initializeFlights: function(){
