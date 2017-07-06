@@ -91,11 +91,22 @@
 
 
 <script type="html/template" id="ShowReservationTemplate">
-<h1>Flight number: {{ id }}</h1>
-  <h2>{{ date }}</h2>
-  <h2>{{ from }}</h2>
-  <h2>{{ to }}</h2>
-<div>
-  <h3> Your seat {{ reservation }} </h3>
-</div>
+
+<table>
+  <tr>
+    <th>Flight Number</th>
+    <th>Date</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Your Seat Reservation</th>
+  </tr>
+  <tr>
+    <td>{{ id }}</td>
+    <td>{{ date }}</td>
+    <td>{{ from }}</td>
+    <td>{{ to }}</td>
+    <td>{{ seat_no }}</td>
+  </tr>
+</table>
+
 </script>

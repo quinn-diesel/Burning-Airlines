@@ -29,6 +29,15 @@ app.AppRouter = Backbone.Router.extend({
 
   showReservation: function (){
     console.log("Navigated to the reservation page");
+
+    var reservations = new app.Reservations();
+    reservations.fetch();
+
+    var rv = new app.ShowReservationView(
+      {collection:reservations}
+    );
+    rv.render();
+
   }
 
 
