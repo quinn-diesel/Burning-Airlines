@@ -61,6 +61,15 @@ p9.flights << f16
 
 p1.flights << f1 << f2
 p2.flights << f3
+p3.flights << f4
+p4.flights << f5
+p5.flights << f6
+p6.flights << f7
+p7.flights << f8 << f12
+p8.flights << f9 << f13
+p9.flights << f10 << f14
+p10.flights << f11 << f15 << f16
+
 
 f1.reservations << r1 << r2 << r3
 

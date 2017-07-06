@@ -21,9 +21,9 @@ app.FlightDetailView = Backbone.View.extend({
 
     var rows = _.range(1,rowSize+1);
     var columns = _.range(1,columnSize+1);
-    var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    var $seatTable = $('<table id="seatPlanning">')
+    var $seatTable = $('<table id="seatPlanning">');
 
     _.each(rows, function(num){
       var $row = $("<tr>")
@@ -31,7 +31,9 @@ app.FlightDetailView = Backbone.View.extend({
 
       _.each(columns, function(n){
         var seat_no = num + letters[n-1]
+
         var $column = $('<td class="seat">').attr('seat_no', seat_no).text(seat_no);
+
         $column.appendTo($row);
 
         if ( _.contains(reservedCheck, seat_no) ){
@@ -48,35 +50,35 @@ app.FlightDetailView = Backbone.View.extend({
       seat_no: ''
     };
 
+
+    // render the #flightDetail div on app page, and append the seatplan table to the div
+    this.$el.html(markup);
+    this.$el.append($seatTable);
+
+
+    // click to choose seat
     $(document).on('click', ".seat", function(){
       if ( $(this).hasClass('reserved') ) {
         return;
       }
+
       $(".seat").not(this).removeClass('selected');
-      $(this).toggleClass('selected');
+      $(this).addClass('selected');
       valueToSave.seat_no = $(this).attr('seat_no');
       console.log("Current Seat: " + valueToSave.seat_no);
 
     });
 
     // click to saveSeat
-
-
-
     $(document).on('click', '#saveSeat', function(){
 
+      reservation.save(valueToSave).done(function(){
 
+        console.log( 'Seat Saved: ' +  reservation.get('seat_no') + " Flight: " + reservation.get('flight_id') );
 
-      reservation.save(valueToSave);
-      app.router.navigate( "reservations", true );
-
-      console.log('saved: ', reservation);
+        app.router.navigate( "reservations", true );
+      });
     });
-
-
-    // this.$el.html(markup);
-    this.$el.html(markup);
-    this.$el.append($seatTable);
 
 
   }

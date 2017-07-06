@@ -5,14 +5,13 @@ _.templateSettings = {
      interpolate : /\{\{([\s\S]+?)\}\}/g
 };
 
-// app.posts = new app.Posts();
-//
-// app.router = new app.AppRouter();
+
 app.router = new app.AppRouter();
-
 app.flights = new app.Flights();
+app.reservations = new app.Reservations();
 
-// seating plan View
+
+// seating plan View in app/views/airplanes/show.html.erb
 $(document).on('click', '#displaySeats', function (){
   var rowSize = $('#seatingChart').data('rows');
   var columnSize = $('#seatingChart').data('columns');
@@ -30,26 +29,22 @@ $(document).on('click', '#displaySeats', function (){
     $row.appendTo($seatTable);
 
     _.each(columns, function(n){
-      var $column = $('<td class="seat">').attr('row_no', num).attr('column_no', letters[n-1]);
+      var seat_no = num + letters[n-1]
+      var $column = $('<td class="seat">').attr('seat_no', seat_no).text(seat_no);
       $column.appendTo($row);
     });
   });
+
   $('#seatingChart').empty();
   $('#seatingChart').append($seatTable);
-
 });
 
 
 
 
 $(document).ready(function(){
-  //once the dom is loaded, fetch the posts from the rails ajax backend
-  // app.posts.fetch().done(function(){
-    // when the fetch() ajax request is finished, we're ready to start the app
-  //   Backbone.history.start();
-  // });
 
-
+  // when the fetch() ajax request is finished, we're ready to start the app
   app.flights.fetch().done(function(){
     Backbone.history.start();
 
@@ -58,6 +53,7 @@ $(document).ready(function(){
 
   window.setInterval(function(){
     app.flights.fetch();
+    // app.reservations.fetch();
   } , 3000)
 
 });

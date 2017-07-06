@@ -19,33 +19,38 @@ app.AppRouter = Backbone.Router.extend({
   showFlight: function(flight_id){
     var appView = new app.AppView();
     appView.render();
-    console.log("Navigated to flight detail route", flight_id);
-    $('#SearchView').hide();
 
+    console.log("Navigated to flight detail route", flight_id);
+
+    $('#SearchView').hide();
     $('#searchFlights').hide();
 
 
     var flight = app.flights.get(flight_id);
+    console.log('Current flight id:', flight_id);
 
-    console.log('flight:', flight);
+    app.flights.fetch().done(function(){
 
-    var flightDetailView = new app.FlightDetailView({model:flight});
-    flightDetailView.render();
-  },
+      var flightDetailView = new app.FlightDetailView({model:flight});
+      flightDetailView.render();
+
+    });
+  }, // end of showFlight
+
 
   showReservation: function (){
     var appView = new app.AppView();
     appView.render();
-    console.log("Navigated to the reservation page");
 
-    var reservations = new app.Reservations();
+    $('#SearchView').hide();
+    $('#flightDetail').hide();
+    $('#reservations').show();
 
-    reservations.fetch().done(function(){
-      $('#SearchView').hide();
-      $('#flightDetail').hide();
-      $('#reservations').show();
+    console.log("Navigated to the reservation route");
 
-      _.each(reservations.models, function( res ){
+    app.reservations.fetch().done(function(){
+
+      _.each(app.reservations.models, function( res ){
 
         var rv = new app.ShowReservationView(
           {model:res}
@@ -54,10 +59,7 @@ app.AppRouter = Backbone.Router.extend({
       });
 
     });
-
-
-
-  }
+  }, // end of showReservation
 
 
 });
