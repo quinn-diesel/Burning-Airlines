@@ -14,7 +14,7 @@
   <h1>Inferno Airlines</h1>
 
   <div id="SearchView">
-  
+
   </div>
 
 
@@ -74,7 +74,7 @@
   <h2>{{ date }}</h2>
   <h2>{{ from }}</h2>
   <h2>{{ to }}</h2>
-  <h3>Seats left</h3>
+  <h3>Seats left:  {{airplane.rows * airplane.columns -  reservations.length }}</h3>
   <h3>Capacity: {{airplane.rows * airplane.columns}}</h3>
 
   <button id="saveSeat">Save Seat</button>
